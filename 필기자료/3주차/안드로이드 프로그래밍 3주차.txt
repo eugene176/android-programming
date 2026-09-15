@@ -1,0 +1,84 @@
+안드로이드 프로그래밍 3주차
+
+위젯 = object(화면에 들어가는 모든 것)
+레이아웃 = 화면(전체화면+위젯 화면)
+ㄴ종류 다양함
+
+앞으로 실습 프로젝트 이름은 챕터이름으로.
+main_xml 이름은 self0402_main_org.xml식으로 복붙 후 저 파일에서 실습하기
+
+MainActivity.java 이름은 Self0402_org로
+
+참고로 숫자는 챕터 이름임
+
+ctrl+space =자동완성
+activit_main.xml
+1.code
+2.code|design
+3.design(여기서 딸깍으로 위젯 추가 가능)
+
+gradle 버젼이 안 맞을 때는
+dependencies{this.DependencyHandlerScope
+implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+}
+
+org.java파일
+setContentView(R.layout.self0402_main_org);
+
+crtl+/ = 주석처리/해체
+values/xml 파일은 String,Color만 + 수업에 요구한 것만 냅두기
+
+Mainactivity에서 실행 안되는 버튼(활성화X)은 주석처리
+------------------------위젯-----------------------------
+
+버튼(버튼에도 종류다양)
+ㄴex)radio button
+---필수 인수-----
+width=너비
+height = 높이
+background = 배경색(RRGGBB)
+wrap = 글자크기에 맞춤
+match_parent = 화면 최대치 크기
+
+필수인수들 생략해서도 가능..?
+
+텍스트뷰
+text = 문자열 표현(내용물)
+text_color = RRGGBB AARRGGBB로 문자 색깔
+text size = 글자 사이즈
+typeface = 
+textstyle = 글꼴 지정(글꼴체 이름이 인수)
+singleLine : 내용이 많아서 넘어갈 때 ...으로 표시할지 안할지 (true/false)
+		ㄴfalse면 그냥 글자 짤림
+
+------레이아웃 옵션-----
+padding(좌우에 여백을 주는 것,레이아웃에 사용)
+android:padding="30dp"
+
+layout_margin(글자간의 간격을 주는 거)
+
+visibility 속성
+ndroid:visibility="visible" 
+ndroid:visibility="invisible" 
+ndroid:visibility="gone" 
+visible = 눈에 보임
+invisible = 눈에 안보임(자리는 차지)
+gone = 사라짐
+
+enabled,clickable 속성
+enable = 위젯동작여부(홀수면 불가+회색으로 나옴)
+clickable = 클릭 여부
+
+rotation(기울기) 속성
+android:rotation="각도"
+
+gravity = 내용물을 어느 방향에 붙혀라
+layout_gravity = 레이아웃을 어디에 붙혀라
+인수 : center(중앙)/left(왼쪽)/right(오른쪽)/start(layout시작부분 or 화면 시작부분)/top(위쪽)/bottom(아래쪽)/end(마지막 부분)
+
+자바코드에서 다른 언어처럼 변수에 언어를 저장
