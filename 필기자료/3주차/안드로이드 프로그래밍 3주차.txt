@@ -36,6 +36,12 @@ values/xml 파일은 String,Color만 + 수업에 요구한 것만 냅두기
 Mainactivity에서 실행 안되는 버튼(활성화X)은 주석처리
 ------------------------위젯-----------------------------
 
+모든 위젯 공통 함수
+android:layout_weight="1"
+ㄴ자식 위젯들(레이아웃안에 있는 모든 위젯) 서로 공간을 얼마나 차지해라(비율로)
+
+getApplicationContext() = 현재 사용하고 있는 실행환경 반환해줌
+
 버튼(버튼에도 종류다양)
 ㄴex)radio button
 ---필수 인수-----
@@ -55,6 +61,20 @@ typeface =
 textstyle = 글꼴 지정(글꼴체 이름이 인수)
 singleLine : 내용이 많아서 넘어갈 때 ...으로 표시할지 안할지 (true/false)
 		ㄴfalse면 그냥 글자 짤림
+
+edittext
+android:digits="0123456789."(text에 입력할 수 있는 값들)
+android:hint="숫자1"(아무것도 입력 안되있을 떄 출력하는 값)
+
+toast = 잠깐 있다가 사라지는 글자
+Toast.makeText(Context, Text, Duration)
+ㄴcontet = 실행환경 즉 getApplicationContext()로 사용
+ㄴㄴtext 출력 문자
+ㄴㄴㄴduration = 기간 얼마나 보여줄지(Toast.LENGTH_SHORT,Toast.LENGTH_LONG)
+
+toast.setGravity(Gravity.CENTER, 0, 0);
+ㄴ toast위치 변경 만약 여러번 거쳐야되면 |사용 ex) toast.setGravity(Gravity.CENTER|Gravity.bottom, 0, 0);
+ㄴㄴ0,0은 순서대로 x축에서 얼마나 움직이냐, y축에서 얼마나 움직여라.
 
 ------레이아웃 옵션-----
 padding(좌우에 여백을 주는 것,레이아웃에 사용)
@@ -80,5 +100,8 @@ android:rotation="각도"
 gravity = 내용물을 어느 방향에 붙혀라
 layout_gravity = 레이아웃을 어디에 붙혀라
 인수 : center(중앙)/left(왼쪽)/right(오른쪽)/start(layout시작부분 or 화면 시작부분)/top(위쪽)/bottom(아래쪽)/end(마지막 부분)
+
+자바파일에 xml 파일에 쓰던 함수,위젯 쓸려면 import하기
+
 
 자바코드에서 다른 언어처럼 변수에 언어를 저장
