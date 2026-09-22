@@ -1,0 +1,43 @@
+안드로이드 프로그래밍4주차
+
+레이아웃 공통되는 인수
+orientation : horizontal(수평 가로로 펼침)/vertical(세로방향으로 펼침)
+
+gravity = 위젯+본인 내부에 있는 모든 요소 정렬방향 대각선 방향을 원하면  방향|방향(| 의미는 +임) 으로 지정해줘야 함
+ㄴ모든 요소를 붙힌 이유는 버튼과 같은 위젯에 쓰는 경우	
+					
+padding = 여백 설정(좌우)
+
+layout_weight = 위젯에 가중치를 줘서 어떤 비율로 배치할꺼냐(이거 안쓰면 그냥 공간 남김) + 전체화면을 기준으로 함
+
+순서가 먼저 layout크기 대로 설정한 뒤에 가중치에 준 비율만큼 처리함
+
+baselinealignted  = True 가운데에 위젯 중앙을 배치시키고/false면 맨위쪽에 붙힘
+
+layout_gravity = 위젯 위치의 오른쪽,왼쪽,가운데 등등
+
+그리드 레이아웃만의 인수
+row_span = 숫자
+height_span = 숫자
+ㄴ 위젯크기를 합쳐서 하나의 위젯으로 써라
+
+
+모든 프로젝트 생성 시 기본값이 consfraint layout이라 없애고 원하는 레이아웃 적어야 함
+
+
+android:backgroundTint="#E91F63"
+ㄴ 위젯들 배경색 변경(만약에 정확한 값을 모르면 결과미리보기 창에서 도화지모양 클릭
+(background tint 옆에 있음)
+
+xml을 안쓰고도 java파일만으로도 레이아웃을 꾸밀 수 있는데 비효율적임
+
+랠러티브레이아웃만의 인수
+layout_alignParentLeft
+layout_alignParentRight
+layout_alignParentBottom
+layout_centerHorizontal
+layout_centerVertical
+layout_centerInParent
+ㄴ 값들은 true/false/기준이 되는 위젯(요소)
+				ㄴ이렇게 쓸 경우에는 인수가 살짝 바뀌는 경우ㅇ
+
