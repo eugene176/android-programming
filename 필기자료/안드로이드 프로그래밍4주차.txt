@@ -42,6 +42,7 @@ layout_centerVertical
 layout_centerInParent
 ㄴ 값들은 true/false/기준이 되는 위젯(요소)
 				ㄴ이렇게 쓸 경우에는 인수가 살짝 바뀌는 경우 존재
+					android:layout_alignBaseline = 시작 기준점을 맞춰줌 얘도 기준이 되는 물체 id를 작성해줘야 함
 랠러티브레이아웃은 기준점이 되는 물체랑 그 기준점을 사용할려는 물체 모두 직접적으로 랠러티브레이아웃와 연결되있어야함
 
 
