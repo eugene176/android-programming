@@ -1,7 +1,6 @@
 안드로이드 프로그래밍4주차
 
 레이아웃 공통되는 인수
-orientation : horizontal(수평 가로로 펼침)/vertical(세로방향으로 펼침)
 
 gravity = 위젯+본인 내부에 있는 모든 요소 정렬방향 대각선 방향을 원하면  방향|방향(| 의미는 +임) 으로 지정해줘야 함
 ㄴ모든 요소를 붙힌 이유는 버튼과 같은 위젯에 쓰는 경우	
@@ -15,6 +14,9 @@ layout_weight = 위젯에 가중치를 줘서 어떤 비율로 배치할꺼냐(�
 baselinealignted  = True 가운데에 위젯 중앙을 배치시키고/false면 맨위쪽에 붙힘
 
 layout_gravity = 위젯 위치의 오른쪽,왼쪽,가운데 등등
+
+린에어 레이아웃만의 인수
+orientation : horizontal(수평 가로로 펼침)/vertical(세로방향으로 펼침)
 
 그리드 레이아웃만의 인수
 row_span = 숫자
@@ -39,5 +41,7 @@ layout_centerHorizontal
 layout_centerVertical
 layout_centerInParent
 ㄴ 값들은 true/false/기준이 되는 위젯(요소)
-				ㄴ이렇게 쓸 경우에는 인수가 살짝 바뀌는 경우ㅇ
+				ㄴ이렇게 쓸 경우에는 인수가 살짝 바뀌는 경우 존재
+랠러티브레이아웃은 기준점이 되는 물체랑 그 기준점을 사용할려는 물체 모두 직접적으로 랠러티브레이아웃와 연결되있어야함
+
 
