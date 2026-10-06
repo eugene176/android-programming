@@ -1,0 +1,78 @@
+안드로이드 프로그래밍 6주차
+
+메뉴
+메뉴가 뜸
+토스트
+
+대화상자
+팝업이 뜸
+
+메뉴
+메뉴라는 폴더를 만들어야 함(형식 자체가 메뉴로 있음)
+ㄴres파일에서 우클릭 new -> menu 고르기
+ㄴㄴ생긴 디렉터리 안에서 한번 더 우클릭 new -> resource 파일 누르면 menu.xml 됌
+onCreateOptionsMenu() <- 자바에서 메뉴 파일 등록 오버라이딩
+onOPtionsitemSelected() <- 메뉴 선택시 동작할 메소드 오버라이딩
+switch-case 문으로 보통 구현
+자바파일에서의 기능
+버튼.setScaleX(숫자) <- 크기 확대(양수 집어넣기) 축소 (float)(분수 집어넣기)
+버튼.setScaleY(숫자) <- 크기 확대(양수 집어넣기) 축소 (float)(분수 집어넣기)
+ㄴ(숫자) 저 안에는 디폴트가 int형임
+
+
+<item
+	id
+	title />
+ㄴ메뉴에 들어갈 인수들(xml)
+mInflater.이름(R.menu.menu xml파일 이름, menu);
+
+-옵션메뉴
+그냥 누르면 옵션이 나옴
+메뉴 xml파일 없이도 자바에서 생성 가능
+
+
+-컨텍스트 메뉴
+롱 클릭할시 입력할 수 있는 창이 뜸
+옵센메뉴랑 마찬가지로 메뉴 xml 후 자바에서 등록 후 이벤트 코딩
+메뉴 xml파일 없이도 자바에서 생성 가능(수업 떄 다루지는 않으심)
+
+
+
+토스트
+화면에 잠깐 나타났다 사라지는 메시지
+ㄴ용도는 디버깅으로 씀
+자바 기능
+Toast.Length.Long - 몇초 동안 존재할꺼냐(길게)
+Toast.Length.Short - 몇초 동안 존재할꺼냐(짧게)
+setGravity(Gravity.~~,x 위치,y위치) : 어디 위치시킬꺼냐
+		ㄴ어디를 기준으로 먼저 채울꺼냐(어디부터 세울꺼냐)
+기본값은 아래쪽에 위치
+
+xml 인수들
+<item
+	id
+	title />
+
+
+대화상자(dialog, 축약 : dlg)
+제목,내용입력,확인,취소로 구성되있는 상자
+다 각각 코드가 정해져있음(매칭이 되는 함수가 있음)
+
+
+자바 함수,인수들
+dlg.setPositiveButton("확인", null);
+ㄴnull 부분에 눌렀을 때 발생하는 이벤트를 구현해줘야 함
+ex)
+dlg.setPositiveButton("확인",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(Self0703_org.this,
+                                        "확인을 눌렀네요", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+setMultiChoiceItems() <- 여러개 동시에 세팅하게 해줌
+
+다이얼로그(대화상자).xml
+toast.xml
+등등 여러 xml을 만들고 전역변수로 정의하면 대화상자의 확인 취소 등등에 연결시켜서 이벤트 동작하게 만듦
