@@ -1,0 +1,40 @@
+안드로이드 프로그래밍 7주차
+4~7주차 시험(버튼~메뉴)
+
+파일은 시험 X + 수업도 X
+
+시험 떄 제출방법
+사용자/user/androidprojects 이 위치에서 새로운 프로젝트가 만들어짐
+
+출제 문제는 2장을 섞어서 냄
+
+
+어떤 위젯을 바꿀려면 자바에서 선언해줘야 됌 그게 레이아웃이어도 + xml에서는 아이디를 지정해줘야 됌
+
+
+textview : 사용자가 입력 불가능
+edittext : 사용자 입력 가능
+Month에는 1을 더해줘야 함  = 0부터 세기 때문에
+ㄴgetMonth()의 반환값이 0부터 셈 
+
+text의 내용을 작성할 떄는 무조건 문자열,문자열 변수여야 함 정수를 넣어야 할땐
+Integer.to.String(변수) <- 이렇게 해야바꿔야 함
+ㄴ얘는 새로운 문자열을 만들고 거기에 값을 넣는거라 됌
+
+(String)이 안되는 경우 : 애초에 문자열로 구성이 안된 변수 일떄는 에러가 뜸
+ㄴ왜) 새로운 문자열을 만드는 게 아니라서 에러를 뱉음
+    
+mInflater.inflate(R.menu.menu1, menu);
+ㄴ앞에 부분은 어떤 메뉴를 추가할 것이냐
+ㄴㄴ 뒤에 부분은 어디에 추가할 것이냐
+
+연결할 메뉴가 많으면 걍 inflate()여러번 쓰기
+
+메뉴에 속한 위젯은 </item>인데 이때 단 한번도 좌우 크기 gravity쓰는 게 없었음
+ㄴ못쓴다고 생각하기
+
+   public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenuInfo menuInfo)
+ㄴmenu생성할 콘덱스트 메뉴 객체(어떤 메뉴 xml을 추가할껀지)
+ㄴㄴ view v 롱클릭할시 어떤 객체가 클릭됐는지
+ㄴㄴㄴmenuinfo 위젯 내부에 어떤 항목을 클릭했는지
