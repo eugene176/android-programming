@@ -42,7 +42,7 @@ public class Self0801_org extends AppCompatActivity {
                 fileName = Integer.toString(year) + "_"
                         + Integer.toString(monthOfYear + 1) + "_"//0~11까지라서 + 1 해줘야 함
                         + Integer.toString(dayOfMonth) + ".txt";
-                String str = readDiary(fileName);//???
+                String str = readDiary(fileName);//inFs = openFileInput(fName);try문으로 먼저 파일을 열어볼려 하고 기존에 파일이 없으면 catch문으로 FileOutputStream outFs = openFileOutput(fileName, Context.MODE_PRIVATE); 시행해서 파일 생성. 
                 edtDiary.setText(str);//제목 설정
                 btnWrite.setEnabled(true);//쓰기 허용하게 해줌
             }
