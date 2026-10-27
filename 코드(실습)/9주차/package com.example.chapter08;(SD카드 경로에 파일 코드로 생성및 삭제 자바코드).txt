@@ -1,0 +1,42 @@
+package com.example.chapter08;
+
+import java.io.File;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.widget.Button;
+
+public class Self0801 extends AppCompatActivity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.self0801_main);
+        ActivityCompat.requestPermissions(this, new String[] {android.Manifest.permission.WRITE_EXTERNAL_STORAGE},MODE_PRIVATE);//메모리 액세스 허용
+
+        Button btnMkdir, btnRmdir;
+        btnMkdir = (Button) findViewById(R.id.btnMkdir);
+        btnRmdir = (Button) findViewById(R.id.btnRmdir);
+
+        final String strSDpath = Environment.getExternalStorageDirectory()
+                .getAbsolutePath();//sd카드 부분 경로 변수로 저장
+        final File myDir = new File(strSDpath + "/mydir");//파일 객체 생성
+
+        btnMkdir.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                myDir.mkdir();//파일 생성
+            }
+        });
+
+        btnRmdir.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                myDir.delete();
+            }
+        });
+
+    }
+
+}
