@@ -1,0 +1,78 @@
+안드로이드 프로그래밍 10주차
+
+캔버스 -canvas(도화지,그리기)
+페인트 - paint(붓,세부 설정)
+
+
+====================================캔버스,페인트 위치=====================
+setContentView(new 클래스 이름(this));
+
+private static class 클래스 이름 extends view{
+	public 클래스이름(context contet){
+		super(context); //초기화
+	}
+}
+	
+	public boolean onTouchEvent(MotionEvent event){
+		switch(event.getAction()){
+		case MotionEvent.ACTION_DOWN:
+			~~~~~
+	
+	protected void onDraw(canvas canvas){
+		super.onDraw(canvas)
+		여기서 canvas,paint 설정하기
+	}
+==========================================================================
+
+MotionEvent의 함수
+event.getX()
+event.getY()
+event.getAction()
+
+onDraw에서 쓰는 객체들
+path : 좌표(x,y)
+- 함수
+path.moveTo(x,y) : 시작 위치 설정
+path.lineTo(x,y) : 선 그을 위치(마지막 위치)//이걸 여러개 써서 선을 긋는 게 가능
+path.cubicTo(x1,y1,x2,y2,x3,y3)//곡선그리기
+
+Rect : 사각형
+Rect rect = new rect(x(왼쪽 상단),y(왼쪽상단),x1(오른쪽 하단),y1(오른쪽하단))//다른 추가 기능은 없음 바로 canvas로 그림
+
+canvas.drawRect(rect,paint);
+canvas.drawRoundRect(rect,x,y,paint);
+ㄴ x,y는 안쪽 둥근 원형의 x크기,y크기 지정
+
+canvas 특징
+
+
+그래픽(도형 그리는 거)
+1.xml파일 필요 X
+
+
+이미지(그림 파일을 활용하는 거)
+R.drawable의 의미는 drawable에 위치한 파일을 쓰겠다는 의미.(drawable : 왼쪽 폴더 목록에 res 하위에 있음)
+
+이미지를 불러오는 법(내장일떄)
+            Bitmap picture = BitmapFactory.decodeResource(getResources(),
+                    R.drawable.그림이름);//getResources가 해당 메모리가 있는 경로를 가져옴.
+canvas.drawBitmap(비트맵 객체의 사진,왼쪽 상단 x좌표,왼쪽 상단 y좌표,null)// 이걸로 그림
+
+canvas객체로 할 수 있는 것
+기울기회전-rotate
+확대 - scale
+기울기 눕히기 -skew
+좌표 이동 = translate
+
+BlurMaskFilter객체 - 블러링용 
+bMask = new BlurMaskFilter(30, BlurMaskFilter.Blur.NORMAL);//숫자는 블러링 강도 의미
+모드가 총 3개
+BlurMaskFilter.Blur.NORMAL// 기본적인 블러링
+BlurMaskFilter.Blur.INNER//내부를 남기는 방식
+BlurMaskFilter.Blur.OUTER//외부를 남기는 방식
+BlurMaskFilter.Blur.SOLID//좀 더 부드럽게 블러링
+
+객체 생성 후 페인트 연결 후 캔버스에서 작성 
+paint.setMaskFilter(bMask); 
+
+
