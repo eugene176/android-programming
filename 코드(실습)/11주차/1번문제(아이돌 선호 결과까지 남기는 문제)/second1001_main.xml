@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00FF00"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnReturn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="돌아가기" />
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/idol1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="방탄소년단" />
+
+        <RadioButton
+            android:id="@+id/idol2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="젝스키스" />
+
+        <RadioButton
+            android:id="@+id/idol3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소녀시대" />
+
+        <RadioButton
+            android:id="@+id/idol4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="에이핑크" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnselect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택완료" />
+
+    <TextView
+        android:id="@+id/textSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="결과창"/>
+
+</LinearLayout>
