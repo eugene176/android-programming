@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {//get view까지가 오버라이딩 해줘야 하는 메소드 crtl+i를 누르면 자동으로 완성함.
-            ImageView imageview = new ImageView(context);
+            ImageView imageview = new ImageView(context);//기존 xml파일에  없는 뷰(위젯)들을 생성할떄는 context로 선언해줘야 함. context는 다른 위젯들이 접근할 수 있게 해주는 정보를 가지고 있음
             imageview.setLayoutParams(new Gallery.LayoutParams(200, 300));
             imageview.setScaleType(ImageView.ScaleType.FIT_CENTER);
             imageview.setPadding(5, 5, 5, 5);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            return imageview;
+            return imageview;//갤러리에 들어갈 형식의 뷰(여기서는 이미지뷰,텍스트뷰가 들어올 떄도 있음)를 반환해줘서 갤러리 내부를 채워줌
         }
     }
 
