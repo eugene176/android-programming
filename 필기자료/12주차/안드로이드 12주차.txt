@@ -17,6 +17,8 @@ view는 layout안에 해당하는 경우가 대다수
 
 리스트뷰 동적 추가,삭제,여러개 선택 가능. 
 -> 모드를 지정가능
+다중 선택 같은 list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);를 써야 하는 코드는 오직 리스트뷰,그리드뷰로 AbsListView를 상속 받은 view여야 함.
+(정확하게는 ListView.CHOICE_MODE_MULTIPLE가 abslistview에서 제공함)
 
 
 그리드 뷰
