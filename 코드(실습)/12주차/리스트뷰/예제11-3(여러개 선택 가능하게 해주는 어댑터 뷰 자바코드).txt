@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity  {
         ListView list = (ListView) findViewById(R.id.listView1);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_multiple_choice, mid);
-        list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);//여러개를 선택 가능하게 해주는 모드(체크박스),CHOICE_MODE_SINGLE는 라디오 박스가 생김.
+                android.R.layout.simple_list_item_multiple_choice, mid);// android.R.layout.simple_list_item_multiple_choice 이 문장으로 뷰를 생성해주는데 이떄 라디오 박스,체크박스를 생성해줌
+        list.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);//항목 선택 상태를 관련해서 구현해줌.(위의 코드는 뷰 생성과 내용물 넣는것까지만 이 코드까지 써야 체크 선택 유지가 같은 기능을 구현해줌
         list.setAdapter(adapter);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
