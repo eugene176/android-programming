@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             imageview.setPadding(5, 5, 5, 5);
             imageview.setImageResource(posterID[position]);
 
-            final int pos = position;
+            final int pos = position;//get view할떄마다 새로운 pos가 생성되는 것 그래서 final
             imageview.setOnTouchListener(new View.OnTouchListener() {
                 public boolean onTouch(View v, MotionEvent event) {
                     ImageView ivPoster = (ImageView) findViewById(R.id.ivPoster);
