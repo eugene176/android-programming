@@ -39,3 +39,16 @@ layout안에 <Gallery>로 존재하는 경우가 대다수
 
 스피너도 갤러리와 비섯 
 
+어떤 뷰든 상관없음 방식이 2가지가 있음 사용자지정 어댑터로 연결하는 것, arrayadapter를 이용해 만드는 것
+arrayadapter를 이용해 만들떄는 객체를 생성할 떄 뷰도 생성해주는 기능이 구현되있어서 사용자가 따로 뷰를 만들지 않아도 됌
+사용자지정 어댑터는 text든 image든 직접 뷰를 생성하고 그 값을 반환해서 갤러리,그리드뷰,리스트뷰 등등에 넣어줘야 함.
+수업시간에서는 BaseAdapter를 상속받는 MyGalleryAdapter라는 함수를 정의했음
+
+baseadapter를 상속받는 함수들은 4가지의 메소드를 오버라이딩 해줘야함(생성자 포함하면 5)
+public MyGalleryAdapter(Context c) //이게 생성자
+public int getCount()
+public Object getItem(int arg0)
+public long getItemId(int position)
+public View getView(int position, View convertView, ViewGroup parent)//이게 뷰를 생성해주는 메소드
+
+
