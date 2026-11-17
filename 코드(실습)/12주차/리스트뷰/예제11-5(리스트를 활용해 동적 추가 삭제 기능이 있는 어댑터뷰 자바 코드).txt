@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int arg2, long arg3) {
                 midList.remove(arg2);//리스트에 담겨져 있는 데이터 삭제
-                adapter.notifyDataSetChanged();//어댑터 변경된 구조 적용
+                adapter.notifyDataSetChanged();//final ArrayAdapter에 내용을 추가하는 걸 한번 더 돌리고 setAdapter(adapter)도 한번 더 돌려서 최신화 시켜주는 것
                 return false;
             }
         });
