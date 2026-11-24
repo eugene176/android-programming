@@ -1,0 +1,74 @@
+#안드로이드 프로그래밍 13주차
+
+데이터 저장과 관리(DB)
+
+DB 종류(SQLITE 기반,MYSQL,oracle)
+계층형
+망형
+관계형
+객체지향형
+객체관계형
+
+
+관계형 DB
+1.유지보수에 좋음
+2.내용 변경에 용이함
+단점
+자원을 많이 먹어서 느려짐(자료가 많아지면)
+
+
+default는 sqllite기반 그럴 떄 테이블
+create table 테이블이름(열 형식,열 형식)
+insert
+delete
+select
+update
+
+DB쓰기 전에 미리 프로젝트를 켜놓고 디바이스 매니저란 세팅란을 열고 google api 설정하기
+cmd로 이동
+cd C:\Users\User\AppData\Local\Android\Sdk\platform-tools 작업공간 옮기기
+adb root
+adb shell
+이 과정을 마치면 #이 나와야 함, 달러가 나오는 경우도 있는데 그러면 잘못된 거임
+디바이스를 안드로이드 프로그래밍에서 실행한번하기
+cd /data/data/com.example.chapter12  //view -> device explorer를 켜서 파일이름 위치 있나 확인
+mkdir databases //DB 들어갈 파일 생성
+cd databases
+pwd  //작업 공간 확인
+
+
+
+방법 2개 cmd에서 하기,안드로이드프로그래밍에서 하기
+
+cmd에서 하는법
+sqlite3 naverDB //큰 dir/DB 생성
+CREATE TABLE userTable (id char(4), userName char(15), email char(15), birthYear int); //큰 dir/DB에 들어갈 DB 생성
+.schema userTable //테이블 구조를 볼 수 있음
+INSERT INTO userTable VALUES('john', 'John Bann', 'john@naver.com', 1990);
+INSERT INTO userTable VALUES('kim', 'Kim Chi', 'kim@daum.net', 1992);
+.header on //보기 좋게 나옴
+.mode column //줄정리까지 해서 보기 좋게 나옴
+
+
+delete from 테이블명 where //테이블 행 삭제
+update 테이블명 set 변경내용 where
+drop table 테이블명//테이블삭제
+.exit // 종료
+
+
+안드로이드 프로그래밍에서 하는 법
+DB 생성 삭제 - SQLite OpenHelper 클래스 상속 or 사용
+update,delete,insert,select - SQLiteDatabase 클래스 상속 or 사용
+커서 이동 - Cursor 인터페이스 상속 or 사용
+
+oncreate,onupgrade 부분에서 테이블 생성
+
+SQLiteOpenHelper를 상속받을 때 구현해줘야 하는 메소드
+생성자
+ex) public myDBHelper(Context context)
+
+public void onCreate(SQLiteDatabase db)
+public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+
+자바는 기본적으로 문자열들을 비교할 때는 to.String().equals("")
+to.String().isEmpty() 같은 계열로 비교
